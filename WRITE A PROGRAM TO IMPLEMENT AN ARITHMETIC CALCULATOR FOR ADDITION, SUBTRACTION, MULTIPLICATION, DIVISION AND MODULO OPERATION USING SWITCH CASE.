@@ -1,0 +1,54 @@
+#include <stdio.h>
+void main()
+{
+int a, b, result, op;
+do {
+printf("\nEnter 1 for Addition");
+printf("\nEnter 2 for Subtraction");
+printf("\nEnter 3 for Multiplication");
+printf("\nEnter 4 for Division");
+printf("\nEnter 5 for Modulo");
+printf("\nEnter 6 for Exit");
+printf("\nChoose an option: ");
+scanf("%d", &op);
+if(op >= 1 && op <= 5) {
+printf("Enter values for a and b: ");
+scanf("%d%d", &a, &b);
+}
+switch(op) {
+case 1:
+result = a + b;
+printf("Addition = %d\n", result);
+break;
+case 2:
+result = a - b;
+printf("Subtraction = %d\n", result);
+break;
+case 3:
+result = a * b;
+printf("Multiplication = %d\n", result);
+break;
+case 4:
+if(b == 0) {
+printf("Error! Division by zero.\n");
+} else {
+result = a / b;
+printf("Division = %d\n", result);
+}
+break;
+case 5:
+if(b == 0) {
+printf("Error! Modulo by zero.\n");
+} else {
+result = a % b;
+printf("Modulo = %d\n", result);
+}
+break;
+case 6:
+printf("Exit\n");
+break;
+default:
+printf("Error! Operator is not correct.\n");
+}
+} while(op != 6);
+}
